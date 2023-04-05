@@ -17,6 +17,8 @@ import { View } from "react-native";
 import { Card, Text, theme } from "./src/ui";
 import { ThemeProvider } from "@shopify/restyle";
 import { Layout } from "./src/ui/layout";
+import LandingScreen from "./src/screens/LandingScreen";
+import RootStack from "./src/navigation/RootStack";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -45,31 +47,10 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Layout
-				variant="authScreen"
-				onLayout={onLayoutRootView}
-				style={{
-					alignItems: "center",
-					justifyContent: "center",
-				}}
-			>
-				<View
-					style={{
-						width: "80%",
-						height: 100,
-						borderRadius: 10,
-						backgroundColor: "#10243e",
-						marginVertical: 15,
-					}}
-				></View>
-				<Card variant="fullWidth">
-					<Text variant="body_large" color="blue12">
-						This is a simple example displaying how to use Restyle
-					</Text>
-				</Card>
+			<View onLayout={onLayoutRootView} />
+			<RootStack />
 
-				<StatusBar style="light" />
-			</Layout>
+			<StatusBar style="light" />
 		</ThemeProvider>
 	);
 }

@@ -1,7 +1,7 @@
 import { Text } from "../../ui";
 import { Layout } from "../../ui/layout";
 
-export default function ScanAndConnectScreen() {
+export default function WalletDetailsScreen() {
 	return (
 		<Layout
 			variant="authScreen"
@@ -11,7 +11,7 @@ export default function ScanAndConnectScreen() {
 			}}
 		>
 			<Text variant="title_small" color="blue12">
-				scan and connect screen
+				wallet details screen
 			</Text>
 		</Layout>
 	);
