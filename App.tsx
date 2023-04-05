@@ -18,7 +18,7 @@ import { View } from "react-native";
 import Toast from "react-native-toast-message";
 import RootStack from "./src/navigation/RootStack";
 import { theme } from "./src/ui";
-import { toastConfig } from "./src/ui/alert";
+import { toastConfig } from "./src/ui";
 
 SplashScreen.preventAutoHideAsync();
 

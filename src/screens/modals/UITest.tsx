@@ -6,7 +6,7 @@ import { ScrollView } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Divider } from "../../ui/divider";
 import Toast from "react-native-toast-message";
-import { toastConfig } from "../../ui/alert";
+import { toastConfig } from "../../ui";
 
 export default function UITest() {
 	return (
