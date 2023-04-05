@@ -4,6 +4,8 @@ import ScanAndConnectScreen from "../screens/modals/ScanAndConnectScreen";
 import UITest from "../screens/modals/UITest";
 import ConnectedDappsScreen from "../screens/modals/ConnectedDappsScreen";
 import WalletDetailsScreen from "../screens/modals/WalletDetailsScreen";
+import Toast from "react-native-toast-message";
+import { Modal } from "react-native";
 
 const Stack = createNativeStackNavigator();
 

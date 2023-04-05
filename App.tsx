@@ -9,16 +9,16 @@ import {
 	KumbhSans_800ExtraBold,
 	KumbhSans_900Black,
 } from "@expo-google-fonts/kumbh-sans";
+import { ThemeProvider } from "@shopify/restyle";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useCallback } from "react";
 import { View } from "react-native";
-import { Card, Text, theme } from "./src/ui";
-import { ThemeProvider } from "@shopify/restyle";
-import { Layout } from "./src/ui/layout";
-import LandingScreen from "./src/screens/LandingScreen";
+import Toast from "react-native-toast-message";
 import RootStack from "./src/navigation/RootStack";
+import { theme } from "./src/ui";
+import { toastConfig } from "./src/ui/alert";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -49,7 +49,7 @@ export default function App() {
 		<ThemeProvider theme={theme}>
 			<View onLayout={onLayoutRootView} />
 			<RootStack />
-
+			<Toast config={toastConfig} />
 			<StatusBar style="light" />
 		</ThemeProvider>
 	);

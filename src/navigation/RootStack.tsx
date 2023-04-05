@@ -10,6 +10,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import HomeStack from "./HomeStack";
 import LandingStack from "./LandingStack";
+import Toast from "react-native-toast-message";
+import { toastConfig } from "../ui/alert/toastConfig";
 
 export default function RootStack() {
 	// const authState = useAuthState();
@@ -20,6 +22,7 @@ export default function RootStack() {
 	return (
 		<NavigationContainer>
 			<LandingStack />
+			<Toast config={toastConfig} />
 		</NavigationContainer>
 	);
 }

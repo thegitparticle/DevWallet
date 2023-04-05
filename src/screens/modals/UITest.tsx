@@ -5,6 +5,8 @@ import ButtonUI from "../../ui/button/TextButton";
 import { ScrollView } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Divider } from "../../ui/divider";
+import Toast from "react-native-toast-message";
+import { toastConfig } from "../../ui/alert";
 
 export default function UITest() {
 	return (
@@ -45,16 +47,28 @@ export default function UITest() {
 				/>
 				<ButtonUI
 					variant="secondary"
-					label="this is a button"
-					onPress={() => console.log("button pressed")}
+					label="error toast"
+					onPress={() =>
+						Toast.show({
+							type: "error",
+							text1: "wrong",
+							text2: "please try again",
+						})
+					}
 					style={{
 						marginVertical: 15,
 					}}
 				/>
 				<ButtonUI
 					variant="outlined"
-					label="this is a button"
-					onPress={() => console.log("button pressed")}
+					label="success toast"
+					onPress={() =>
+						Toast.show({
+							type: "success",
+							text1: "it seems like worked",
+							text2: "now you can do other things",
+						})
+					}
 					style={{
 						marginVertical: 15,
 					}}
@@ -88,6 +102,7 @@ export default function UITest() {
 					}}
 				/>
 			</ScrollView>
+			<Toast config={toastConfig} />
 		</Layout>
 	);
 }
