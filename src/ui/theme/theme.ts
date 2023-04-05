@@ -5,6 +5,7 @@ import { textVariants } from "../text";
 import { cardVariants } from "../card";
 import { layoutVariants } from "../layout";
 import { buttonVariants } from "../button";
+import { dividerVariants } from "../divider";
 
 const theme = createTheme({
 	colors: colors,
@@ -13,6 +14,7 @@ const theme = createTheme({
 	cardVariants: cardVariants,
 	layoutVariants: layoutVariants,
 	buttonVariants: buttonVariants,
+	dividerVariants: dividerVariants,
 });
 
 export type Theme = typeof theme;
