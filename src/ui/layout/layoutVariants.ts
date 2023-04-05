@@ -16,6 +16,6 @@ export const layoutVariants = {
 		width: dimensions.fullWidth,
 		height: dimensions.fullHeight,
 		paddingTop: "statusbar",
-		backgroundColor: "blue2",
+		backgroundColor: "blue1",
 	},
 };

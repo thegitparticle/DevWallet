@@ -1,7 +1,11 @@
+import { Button } from "react-native";
+import { useLandingStackNavigation } from "../navigation/types";
 import { Card, Text } from "../ui";
 import { Layout } from "../ui/layout";
 
 export default function LandingScreen() {
+	const navigation = useLandingStackNavigation();
+
 	return (
 		<Layout
 			variant="authScreen"
@@ -18,6 +22,10 @@ export default function LandingScreen() {
 					This is a simple example displaying how to use Restyle
 				</Text>
 			</Card>
+			<Button
+				title="ui test"
+				onPress={() => navigation.navigate("UITest")}
+			/>
 		</Layout>
 	);
 }

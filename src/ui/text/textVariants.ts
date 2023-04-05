@@ -35,22 +35,27 @@ export const textVariants = {
 		fontWeight: "regular",
 		fontFamily: "KumbhSans_400Regular",
 	},
+	caption: {
+		fontSize: 10,
+		lineHeight: 12,
+		fontWeight: "light",
+		fontFamily: "KumbhSans_300Light",
+	},
+
+	// button texts
+
 	button_large: {
 		fontSize: 15,
 		lineHeight: 19,
 		fontWeight: "semibold",
 		fontFamily: "KumbhSans_600SemiBold",
+		color: "blue12",
 	},
 	button_small: {
 		fontSize: 12,
 		lineHeight: 16,
 		fontWeight: "semibold",
 		fontFamily: "KumbhSans_600SemiBold",
-	},
-	caption: {
-		fontSize: 10,
-		lineHeight: 12,
-		fontWeight: "light",
-		fontFamily: "KumbhSans_300Light",
+		color: "blue12",
 	},
 };

@@ -12,7 +12,7 @@ export type AuthStackParamList = {
 export type LandingStackNavigationProp =
 	NativeStackNavigationProp<AuthStackParamList>;
 
-export const useAuthStackNavigation = (): LandingStackNavigationProp =>
+export const useLandingStackNavigation = (): LandingStackNavigationProp =>
 	useNavigation<LandingStackNavigationProp>();
 
 //  Home stack types
