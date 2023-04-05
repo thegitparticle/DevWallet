@@ -1,14 +1,29 @@
-import React from "react";
-import { Card, Text, Layout } from "../../ui";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import React, { useState } from "react";
+import { ScrollView } from "react-native";
+import Toast from "react-native-toast-message";
+import {
+	Card,
+	FullBottomSheet,
+	Layout,
+	SmallBottomSheet,
+	Text,
+	toastConfig,
+} from "../../ui";
 import IconButton from "../../ui/button/IconButton";
 import ButtonUI from "../../ui/button/TextButton";
-import { ScrollView } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { Divider } from "../../ui/divider";
-import Toast from "react-native-toast-message";
-import { toastConfig } from "../../ui";
 
 export default function UITest() {
+	const [isVisible, setVisible] = useState<boolean>(false);
+	const [isVisibleFull, setVisibleFull] = useState<boolean>(false);
+
+	const openSheet = () => setVisible(true);
+	const closeSheet = () => setVisible(false);
+
+	const openSheetFull = () => setVisibleFull(true);
+	const closeSheetFull = () => setVisibleFull(false);
+
 	return (
 		<Layout
 			variant="authScreen"
@@ -73,6 +88,22 @@ export default function UITest() {
 						marginVertical: 15,
 					}}
 				/>
+				<ButtonUI
+					variant="primary"
+					label="bottomsheet"
+					onPress={() => openSheet()}
+					style={{
+						marginVertical: 15,
+					}}
+				/>
+				<ButtonUI
+					variant="primary"
+					label="full bottomsheet"
+					onPress={() => openSheetFull()}
+					style={{
+						marginVertical: 15,
+					}}
+				/>
 				<Divider
 					variant="horizontal"
 					style={{
@@ -102,6 +133,36 @@ export default function UITest() {
 					}}
 				/>
 			</ScrollView>
+			<SmallBottomSheet
+				isVisible={isVisible}
+				onBackdropPress={closeSheet}
+			>
+				<Text variant="title_small" color="blue12">
+					sheet heading
+				</Text>
+				<Text
+					variant="heading_small"
+					color="blue11"
+					marginVertical="$2"
+				>
+					are you sure you wanna?
+				</Text>
+			</SmallBottomSheet>
+			<FullBottomSheet
+				isVisible={isVisibleFull}
+				onBackdropPress={closeSheetFull}
+			>
+				<Text variant="title_small" color="blue12">
+					sheet heading
+				</Text>
+				<Text
+					variant="heading_small"
+					color="blue11"
+					marginVertical="$2"
+				>
+					are you sure you wanna?
+				</Text>
+			</FullBottomSheet>
 			<Toast config={toastConfig} />
 		</Layout>
 	);
