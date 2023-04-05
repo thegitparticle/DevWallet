@@ -1,5 +1,3 @@
-import { colors } from "../theme/colors";
-
 export const cardVariants = {
 	fullWidth: {
 		width: "80%",

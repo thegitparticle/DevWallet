@@ -1,3 +1,7 @@
+import Constants from "expo-constants";
+
+const statusBarHeight = Constants.statusBarHeight;
+
 export const spacing = {
 	// concept : set 0 first, then double for consistent nested spacing
 
@@ -12,4 +16,5 @@ export const spacing = {
 	$8: 40,
 	$9: 45,
 	$10: 50,
+	statusbar: statusBarHeight,
 };

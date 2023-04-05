@@ -16,6 +16,7 @@ import { useCallback } from "react";
 import { View } from "react-native";
 import { Card, Text, theme } from "./src/ui";
 import { ThemeProvider } from "@shopify/restyle";
+import { Layout } from "./src/ui/layout";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -44,14 +45,13 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<View
+			<Layout
+				variant="authScreen"
+				onLayout={onLayoutRootView}
 				style={{
-					flex: 1,
-					backgroundColor: "#0f1720",
 					alignItems: "center",
 					justifyContent: "center",
 				}}
-				onLayout={onLayoutRootView}
 			>
 				<View
 					style={{
@@ -69,7 +69,7 @@ export default function App() {
 				</Card>
 
 				<StatusBar style="light" />
-			</View>
+			</Layout>
 		</ThemeProvider>
 	);
 }
