@@ -1,5 +1,4 @@
-import { Text } from "../../ui";
-import { Layout } from "../../ui/layout";
+import { Text, Layout } from "../../ui";
 
 export default function CreateWalletScreen() {
 	return (
