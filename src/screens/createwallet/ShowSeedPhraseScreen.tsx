@@ -4,9 +4,10 @@ import Toast from "react-native-toast-message";
 import SeedPhraseComponent from "../../components/newwallet/SeedPhraseComponent";
 import { useLandingStackNavigation } from "../../navigation/types";
 import { Layout, TextButton } from "../../ui";
+import { useAuthState } from "../../state";
 
 export default function ShowSeedPhraseScreen({ route }: any) {
-	const navigation = useLandingStackNavigation();
+	const authState = useAuthState();
 	const { seedPhrase } = route.params;
 
 	const copyToClipboard = async () => {
@@ -39,6 +40,11 @@ export default function ShowSeedPhraseScreen({ route }: any) {
 				variant="primary"
 				onPress={() => {
 					// change auth state to true
+					authState.setAuthDetails({
+						primaryAddress:
+							"0x14a28bD398B5b282a363f53A2c28e0E8ed211469",
+						loggedIn: true,
+					});
 				}}
 				label="i've saved it"
 				style={{ marginVertical: "10%" }}

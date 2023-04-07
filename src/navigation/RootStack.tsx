@@ -12,16 +12,17 @@ import HomeStack from "./HomeStack";
 import LandingStack from "./LandingStack";
 import Toast from "react-native-toast-message";
 import { toastConfig } from "../ui/alert/toastConfig";
+import { useAuthState } from "../state";
 
 export default function RootStack() {
-	// const authState = useAuthState();
+	const authState = useAuthState();
 	// const liveWalletsState = useLiveWalletsState();
 
 	// web3walletSetup(liveWalletsState.wallets);
 
 	return (
 		<NavigationContainer>
-			<LandingStack />
+			{authState.authDetails.loggedIn ? <HomeStack /> : <LandingStack />}
 			<Toast config={toastConfig} />
 		</NavigationContainer>
 	);

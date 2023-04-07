@@ -4,9 +4,8 @@ import { Layout } from "../ui/layout";
 export default function HomeScreen() {
 	return (
 		<Layout
-			variant="authScreen"
+			variant="homeScreen"
 			style={{
-				justifyContent: "center",
 				alignItems: "center",
 			}}
 		>
