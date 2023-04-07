@@ -1,4 +1,4 @@
-import WalletSwitcher from "../components/home/WalletSwitcher";
+import CurrentWallet from "../components/home/CurrentWallet";
 import { Text } from "../ui";
 import { Layout } from "../ui/layout";
 
@@ -11,7 +11,7 @@ export default function HomeScreen() {
 				alignItems: "center",
 			}}
 		>
-			<WalletSwitcher />
+			<CurrentWallet />
 			<Text variant="title_small" color="blue12">
 				home screen
 			</Text>

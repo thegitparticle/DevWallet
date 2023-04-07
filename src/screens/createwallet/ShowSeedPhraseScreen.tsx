@@ -2,9 +2,8 @@ import * as Clipboard from "expo-clipboard";
 import { View } from "react-native";
 import Toast from "react-native-toast-message";
 import SeedPhraseComponent from "../../components/newwallet/SeedPhraseComponent";
-import { useLandingStackNavigation } from "../../navigation/types";
-import { Layout, TextButton } from "../../ui";
 import { useAuthState } from "../../state";
+import { Layout, TextButton } from "../../ui";
 
 export default function ShowSeedPhraseScreen({ route }: any) {
 	const authState = useAuthState();

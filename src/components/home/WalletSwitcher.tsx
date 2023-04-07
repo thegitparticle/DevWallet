@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useTheme } from "@shopify/restyle";
 import React, { useState } from "react";
-import { Pressable, View } from "react-native";
+import { Pressable } from "react-native";
 import { useAuthState, useLiveWalletsState } from "../../state";
 import { SmallBottomSheet, Text } from "../../ui";
 
@@ -35,12 +35,7 @@ export default function WalletSwitcher() {
 	};
 
 	return (
-		<View
-			style={{
-				width: "90%",
-				alignItems: "flex-start",
-			}}
-		>
+		<>
 			<Pressable
 				onPress={() => openSheet()}
 				style={{
@@ -72,6 +67,6 @@ export default function WalletSwitcher() {
 					return <WalletItem address={wallet.address} />;
 				})}
 			</SmallBottomSheet>
-		</View>
+		</>
 	);
 }
