@@ -19,10 +19,10 @@ export default function CurrentWallet() {
 	return (
 		<View
 			style={{
-				width: "90%",
 				flexDirection: "row",
 				alignItems: "center",
 				justifyContent: "space-between",
+				marginHorizontal: theme.spacing.$4,
 			}}
 		>
 			<WalletSwitcher />

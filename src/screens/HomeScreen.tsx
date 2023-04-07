@@ -1,20 +1,12 @@
+import BalanceLists from "../components/home/BalanceLists";
 import CurrentWallet from "../components/home/CurrentWallet";
-import { Text } from "../ui";
-import { Layout } from "../ui/layout";
+import { Layout } from "../ui";
 
 export default function HomeScreen() {
 	return (
-		<Layout
-			variant="homeScreen"
-			style={{
-				flexDirection: "column",
-				alignItems: "center",
-			}}
-		>
+		<Layout variant="homeScreen">
 			<CurrentWallet />
-			<Text variant="title_small" color="blue12">
-				home screen
-			</Text>
+			<BalanceLists />
 		</Layout>
 	);
 }
