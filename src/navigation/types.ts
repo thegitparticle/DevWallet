@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 export type AuthStackParamList = {
 	LandingScreen: undefined;
 	CreateWalletScreen: undefined;
-	ShowSeedPhraseScreen: undefined;
+	ShowSeedPhraseScreen: { seedPhrase: string };
 	UITest: undefined;
 };
 

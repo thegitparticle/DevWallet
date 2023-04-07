@@ -10,3 +10,4 @@ export {
 	FullBottomSheet,
 	FullBottomSheetProps,
 } from "./bottomsheet";
+export { Spinner } from "./spinner";
