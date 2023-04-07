@@ -80,7 +80,8 @@ export default function BalanceLists() {
 			onIndexChange={setIndex}
 			initialLayout={{ width: layout.width }}
 			style={{
-				margin: theme.spacing.$4,
+				marginHorizontal: theme.spacing.$4,
+				marginVertical: theme.spacing.$2,
 			}}
 		/>
 	);

@@ -1,7 +1,9 @@
-import { Text } from "../../ui";
-import { Layout } from "../../ui/layout";
+import { useConnectedDappsState } from "../../state";
+import { Text, Layout } from "../../ui";
 
 export default function ConnectedDappsScreen() {
+	const connectedDappsState = useConnectedDappsState();
+
 	return (
 		<Layout
 			variant="authScreen"
@@ -10,9 +12,21 @@ export default function ConnectedDappsScreen() {
 				alignItems: "center",
 			}}
 		>
-			<Text variant="title_small" color="blue12">
-				connected dapps screen
+			<Text variant="body_small" color="off_light">
+				connected dapps will be shown here
 			</Text>
+			{connectedDappsState.dapps.map((dapp) => {
+				return (
+					<Text
+						key={dapp.dappKey}
+						variant="body_small"
+						color="positive"
+						marginVertical="$2"
+					>
+						{dapp.name}
+					</Text>
+				);
+			})}
 		</Layout>
 	);
 }

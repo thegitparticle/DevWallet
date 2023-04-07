@@ -23,6 +23,7 @@ export default function CurrentWallet() {
 				alignItems: "center",
 				justifyContent: "space-between",
 				marginHorizontal: theme.spacing.$4,
+				marginVertical: theme.spacing.$2,
 			}}
 		>
 			<WalletSwitcher />
