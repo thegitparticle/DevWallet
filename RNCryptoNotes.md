@@ -8,4 +8,6 @@
 
 ### To get walletconnect working
 
-1.
+1. `yarn add @walletconnect/web3wallet @walletconnect/react-native-compat`
+2. Need AsyncStorage, Random Values (react-native-get-random-values), `fast-text-encoding`
+3. If typescript, add this `@walletconnect/jsonrpc-types` & `@walletconnect/types`

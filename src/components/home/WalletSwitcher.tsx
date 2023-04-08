@@ -63,8 +63,8 @@ export default function WalletSwitcher() {
 				<Text variant="heading_large" color="blue12">
 					your wallets
 				</Text>
-				{liveWalletsState.wallets.map((wallet) => {
-					return <WalletItem address={wallet.address} />;
+				{liveWalletsState.wallets.map((wallet, key) => {
+					return <WalletItem key={key} address={wallet.address} />;
 				})}
 			</SmallBottomSheet>
 		</>
