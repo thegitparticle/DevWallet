@@ -1,9 +1,13 @@
+import { ethers } from "ethers";
+
 export const generateNewWallet = async () => {
-	// const newWallet = ethers
+	const newWallet = ethers.Wallet.createRandom();
 
-	setTimeout(() => {
-		console.log("Generating new wallet...");
-	}, 1000);
+	let newWalletDetails = {
+		address: newWallet.address,
+		privateKey: newWallet.privateKey,
+		mnemonicPhrase: newWallet.mnemonic.phrase,
+	};
 
-	return true;
+	return { newWalletDetails };
 };

@@ -7,7 +7,7 @@ import { Layout, TextButton } from "../../ui";
 
 export default function ShowSeedPhraseScreen({ route }: any) {
 	const authState = useAuthState();
-	const { seedPhrase } = route.params;
+	const { seedPhrase, address } = route.params;
 
 	const copyToClipboard = async () => {
 		await Clipboard.setStringAsync(seedPhrase);
@@ -40,8 +40,7 @@ export default function ShowSeedPhraseScreen({ route }: any) {
 				onPress={() => {
 					// change auth state to true
 					authState.setAuthDetails({
-						primaryAddress:
-							"0x14a28bD398B5b282a363f53A2c28e0E8ed211469",
+						primaryAddress: address,
 						loggedIn: true,
 					});
 				}}

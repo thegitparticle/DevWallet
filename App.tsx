@@ -1,3 +1,5 @@
+import "@ethersproject/shims";
+
 import {
 	KumbhSans_100Thin,
 	KumbhSans_200ExtraLight,

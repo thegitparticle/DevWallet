@@ -10,8 +10,8 @@ export default function WalletSwitcher() {
 	const liveWalletsState = useLiveWalletsState();
 	const authState = useAuthState();
 
-	// const [val, setVal] = useState(liveWalletsState.wallets[0].address);
-	const [val, setVal] = useState(authState.authDetails.primaryAddress);
+	const [val, setVal] = useState(liveWalletsState.wallets[0].address);
+	// const [val, setVal] = useState(authState.authDetails.primaryAddress);
 
 	const [isSwitcherSheetVisible, setSwitcherSheetVisible] =
 		useState<boolean>(false);
