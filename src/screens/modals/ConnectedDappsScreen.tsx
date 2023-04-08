@@ -8,7 +8,6 @@ export default function ConnectedDappsScreen() {
 		<Layout
 			variant="authScreen"
 			style={{
-				justifyContent: "center",
 				alignItems: "center",
 			}}
 		>
