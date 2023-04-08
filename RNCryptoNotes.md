@@ -11,3 +11,11 @@
 1. `yarn add @walletconnect/web3wallet @walletconnect/react-native-compat`
 2. Need AsyncStorage, Random Values (react-native-get-random-values), `fast-text-encoding`
 3. If typescript, add this `@walletconnect/jsonrpc-types` & `@walletconnect/types`
+
+Put the below imports on top of App.tsx
+
+```
+import "@ethersproject/shims";
+import "fast-text-encoding";
+import "@walletconnect/react-native-compat";
+```

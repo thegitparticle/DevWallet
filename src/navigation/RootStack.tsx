@@ -13,12 +13,13 @@ import LandingStack from "./LandingStack";
 import Toast from "react-native-toast-message";
 import { toastConfig } from "../ui/alert/toastConfig";
 import { useAuthState } from "../state";
+import { web3walletConfig } from "../helpers/web3WalletConfig";
 
 export default function RootStack() {
 	const authState = useAuthState();
 	// const liveWalletsState = useLiveWalletsState();
 
-	// web3walletSetup(liveWalletsState.wallets);
+	web3walletConfig();
 
 	return (
 		<NavigationContainer>

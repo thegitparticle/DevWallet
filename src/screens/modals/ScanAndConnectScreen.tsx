@@ -6,6 +6,9 @@ import { BarCodeScanner } from "expo-barcode-scanner";
 import { useWindowDimensions } from "react-native";
 import Modal from "react-native-modal";
 import ConnectRequestSheet from "../../components/connect/ConnectRequestSheet";
+import { web3wallet } from "../../helpers/web3WalletConfig";
+import { parseUri } from "@walletconnect/utils";
+import { Web3WalletTypes } from "@walletconnect/web3wallet";
 
 export default function ScanAndConnectScreen() {
 	const liveWalletsState = useLiveWalletsState();
@@ -24,17 +27,29 @@ export default function ScanAndConnectScreen() {
 	// 	}, 3000);
 	// }, []);
 
-	// const [proposal, setProposal] =
-	// 	useState<Web3WalletTypes.SessionProposal | null>(null);
+	const [proposal, setProposal] =
+		useState<Web3WalletTypes.SessionProposal | null>(null);
 
 	const [permission, requestPermission] = BarCodeScanner.usePermissions();
 
 	async function handleBarCodeScanned({ type, data }) {
 		setScanned(true);
 
-		console.log("scanned data", data);
+		const parsedData = parseUri(data);
 
-		setShowConnectionRequestSheet(true);
+		if (parsedData.version === 2) {
+			await web3wallet.core.pairing.pair({ uri: data });
+		} else {
+			console.log("wc v1 needed, not supported");
+			// setupWalletConnectV1({
+			// 	uri: data,
+			// 	liveWallets: liveWalletsState.wallets,
+			// });
+		}
+
+		// console.log("scanned data", data);
+
+		// setShowConnectionRequestSheet(true);
 
 		// const parsedData = parseUri(data);
 
@@ -48,6 +63,13 @@ export default function ScanAndConnectScreen() {
 		// 	});
 		// }
 	}
+
+	web3wallet.on("session_proposal", async (proposal) => {
+		console.log("web3wallet listener", "session_proposal triggered");
+
+		setProposal(proposal);
+		setShowConnectionRequestSheet(true);
+	});
 
 	if (!permission) {
 		BarCodeScanner.requestPermissionsAsync();
@@ -89,11 +111,11 @@ export default function ScanAndConnectScreen() {
 				isVisible={showConnectionRequestSheet}
 				onBackdropPress={() => setShowConnectionRequestSheet(false)}
 			>
-				<ConnectRequestSheet />
-				{/* <ConnectionRequestSheet
+				{/* <ConnectRequestSheet /> */}
+				<ConnectRequestSheet
 					proposal={proposal}
 					walletAddress={liveWalletsState.wallets[0].address}
-				/> */}
+				/>
 			</SmallBottomSheet>
 		</Layout>
 	);

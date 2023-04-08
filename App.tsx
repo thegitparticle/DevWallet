@@ -1,4 +1,6 @@
 import "@ethersproject/shims";
+import "fast-text-encoding";
+import "@walletconnect/react-native-compat";
 
 import {
 	KumbhSans_100Thin,
